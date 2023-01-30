@@ -134,11 +134,10 @@ root.render(<App />);
 
 ## Package.json
 
-Start script:
-
 ```json
 "scripts": {
     "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
@@ -155,6 +154,7 @@ npm install react-hot-loader@4.3.11
     +-- App.js
 </pre>
 
+## Main component (with hot reload)
 ```js
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
