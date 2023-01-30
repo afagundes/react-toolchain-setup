@@ -148,13 +148,14 @@ root.render(<App />);
 npm install react-hot-loader@4.3.11
 ```
 
+## Main component (with hot reload)
+
 <pre>
 .
 +-- src
     +-- App.js
 </pre>
 
-## Main component (with hot reload)
 ```js
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
