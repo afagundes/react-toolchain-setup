@@ -175,4 +175,6 @@ export default hot(module)(App);
 
 ## Further Exploring
 
-https://www.toptal.com/react/webpack-react-tutorial-pt-1
+- https://www.toptal.com/react/webpack-react-tutorial-pt-1
+- https://github.com/paradoxinversion/react-starter
+
