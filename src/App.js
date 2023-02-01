@@ -3,6 +3,7 @@ import { hot } from "react-hot-loader";
 import GreetingsFunctional from "./components/GreetingsFunctional";
 import Image from "./components/Image";
 import "./App.css";
+import SVGViewer from "./components/SVGViewer";
 
 class App extends Component {
     render() {
@@ -11,6 +12,7 @@ class App extends Component {
                 <h1> Hello, World! </h1>
                 <GreetingsFunctional name="the developer" />
                 <Image />
+                <SVGViewer />
             </div>
         );
     }

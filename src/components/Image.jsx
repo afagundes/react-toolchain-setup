@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../assets/webpack-logo.png';
+import logo from '../assets/images/webpack-logo.png';
 
 function Image() {
     return (
         <div>
-            <p>This is an image handled by webpack:</p>
-            <img src={logo} alt='Image exported by webpack' />
+            <p>This is an image loaded with 'asset/resource' from Webpack:</p>
+            <img src={logo} alt="Image loaded with 'asset/resource' from Webpack" />
         </div>
     );
 }
