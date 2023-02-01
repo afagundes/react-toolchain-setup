@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
-    mode: 'development',
+    entry: {
+        app: './src/index.js',
+    },
     module: {
         rules: [
             {
@@ -17,34 +17,22 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /.(png|jpg|gif)$/i,
+                test: /.(png|jpg|gif)$/,
                 type: 'asset/resource'
             },
             {
-                test: /.svg/,
+                test: /.svg$/,
                 type: 'asset/inline'
             }
         ]
     },
-    resolve: { extensions: ['*', '.js', '.jsx'] },
+    resolve: { 
+        extensions: ['*', '.js', '.jsx']
+    },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/dist/'
+        publicPath: '/dist/',
+        clean: true,
     },
-    devServer: {
-        open: true,
-        port: 3000,
-        compress: true,
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
-        client: {
-            overlay: {
-                errors: true,
-                warnings: false,
-            }
-        }
-    },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
 };
