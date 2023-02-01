@@ -264,6 +264,7 @@ module.exports = merge(common, {
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
         port: 3000,
+        hot: true,
         compress: true,
         static: path.join(__dirname, 'public'),
         client: {
