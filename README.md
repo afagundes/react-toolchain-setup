@@ -41,7 +41,7 @@ Source: https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c6
 ## Compiler - Babel
 
 ```shell
-npm install --save-dev @babel/core@7.1.0 @babel/cli@7.1.0 @babel/preset-env@7.1.0 @babel/preset-react@7.0.0
+npm install --save-dev @babel/core@7.20.12 @babel/cli@7.20.7 @babel/preset-env@7.20.2 @babel/preset-react@7.18.6
 ```
 
 ### Configuration
@@ -60,7 +60,7 @@ npm install --save-dev @babel/core@7.1.0 @babel/cli@7.1.0 @babel/preset-env@7.1.
 ## Webpack
 
 ```shell
-npm install --save-dev webpack@4.19.1 webpack-cli@3.1.1 webpack-dev-server@3.1.8 style-loader@0.23.0 css-loader@1.0.0 babel-loader@8.0.2
+npm install --save-dev webpack@5.75.0 webpack-cli@5.0.1 webpack-dev-server@4.11.1 style-loader@3.3.1 css-loader@6.7.3 babel-loader@9.1.2
 ```
 
 ### Configuration
@@ -71,37 +71,49 @@ npm install --save-dev webpack@4.19.1 webpack-cli@3.1.1 webpack-dev-server@3.1.8
 </pre>
 
 ```js
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: "./src/index.js",
-    mode: "development",
+    entry: './src/index.js',
+    mode: 'development',
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|browser_components)/,
-                loader: "babel-loader",
-                options: { presets: ["@babel/env"] }
+                loader: 'babel-loader',
+                options: { presets: ['@babel/env'] }
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /.(png|jpg|gif)$/i,
+                type: 'asset/resource'
             }
         ]
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
+    resolve: { extensions: ['*', '.js', '.jsx'] },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "/dist/",
-        filename: "bundle.js"
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/'
     },
     devServer: {
-        contentBase: path.join(__dirname, "public"),
+        open: true,
         port: 3000,
-        publicPath: "http://localhost:3000/dist/",
-        hotOnly: true
+        compress: true,
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            }
+        }
     },
     plugins: [new webpack.HotModuleReplacementPlugin()]
 };

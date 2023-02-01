@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import Greetings from "./components/Greetings";
+import GreetingsFunctional from "./components/GreetingsFunctional";
+import Image from "./components/Image";
 import "./App.css";
 
 class App extends Component {
@@ -8,7 +9,8 @@ class App extends Component {
         return (
             <div className="App">
                 <h1> Hello, World! </h1>
-                <Greetings name="the developer" />
+                <GreetingsFunctional name="the developer" />
+                <Image />
             </div>
         );
     }

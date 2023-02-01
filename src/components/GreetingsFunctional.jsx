@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Greetings = ({name}) => {
+const GreetingsFunctional = ({name}) => {
     return (
         <div>
             Hello from the inside of this component! I am {name}.
@@ -8,4 +8,4 @@ const Greetings = ({name}) => {
     );
 }
 
-export default Greetings;
+export default GreetingsFunctional;
