@@ -12,8 +12,7 @@ References:
 - [X] Add TypeScript
 - [ ] Add [ESLint](https://eslint.org/)
 - [ ] Add [Jest](https://jestjs.io/)
-- [ ] Make Webpack resolve the <code>import React from 'react'</code> from jsx files
-- [ ] Make the hot reload work without having to add <code>hot(module)(App)</code> in the main component
+- [X] Make Webpack resolve the <code>import React from 'react'</code> from jsx files
 - [X] Add a template for **public/index.html** file using the [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin#options)
 - [ ] Maybe add a CSS preprocessor for SASS and Tailwind CSS
 
